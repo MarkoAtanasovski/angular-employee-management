@@ -1,0 +1,103 @@
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+  <!-- Title -->
+  <div mat-dialog-title class="dialog-title">
+    <h2>{{ data ? 'Edit Employee' : 'Add New Employee' }}</h2>
+  </div>
+
+  <!-- Content -->
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name *</mat-label>
+        <input matInput formControlName="firstName" />
+        <mat-error>{{ getFieldError('firstName') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name *</mat-label>
+        <input matInput formControlName="lastName" />
+        <mat-error>{{ getFieldError('lastName') }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email *</mat-label>
+        <input matInput type="email" formControlName="email" />
+        <mat-error>{{ getFieldError('email') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Birth *</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>{{ getFieldError('dob') }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Gender *</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+        <mat-error>{{ getFieldError('gender') }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Education *</mat-label>
+        <mat-select formControlName="education">
+          <mat-option *ngFor="let val of education" [value]="val">
+            {{ val }}
+          </mat-option>
+        </mat-select>
+        <mat-error>{{ getFieldError('education') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Company *</mat-label>
+        <input matInput formControlName="company" />
+        <mat-error>{{ getFieldError('company') }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Experience (Years) *</mat-label>
+        <input matInput type="number" formControlName="experience" min="0" max="50" />
+        <mat-error>{{ getFieldError('experience') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Salary (€) *</mat-label>
+        <input matInput type="number" formControlName="salary" min="0" />
+        <mat-hint>In Euro</mat-hint>
+        <mat-error>{{ getFieldError('salary') }}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="required-hint">
+      <small>* indicates required field</small>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div mat-dialog-actions class="action-buttons">
+    <button mat-button type="button" (click)="close()" [disabled]="isSubmitting">
+      Cancel
+    </button>
+    <button 
+      mat-raised-button 
+      color="primary" 
+      type="submit" 
+      [disabled]="isSubmitting">
+      <span *ngIf="isSubmitting">Saving...</span>
+      <span *ngIf="!isSubmitting">{{ data ? 'Update' : 'Save' }}</span>
+    </button>
+  </div>
+</form>

@@ -1,0 +1,103 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": 1
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "id": "1",
+      "firstName": "Jenny",
+      "lastName": "James",
+      "email": "jenn3@gmail.com",
+      "dob": "2003-05-14T00:00:00.000Z",
+      "gender": "Female",
+      "education": "Graduate",
+      "company": "GenX",
+      "experience": 3,
+      "salary": 5000
+    },
+    {
+      "id": "2",
+      "firstName": "Jessica",
+      "lastName": "Smith",
+      "email": "jessy123@gmail.com",
+      "dob": "2001-01-05T00:00:00.000Z",
+      "gender": "Female",
+      "education": "Graduate",
+      "company": "Tesla",
+      "experience": 8,
+      "salary": 7500
+    },
+    {
+      "id": "3",
+      "firstName": "Asd",
+      "lastName": "Asdwt23",
+      "email": "wefadf@gmail.com",
+      "dob": "2005-12-31T00:00:00.000Z",
+      "gender": "Male",
+      "education": "Diploma",
+      "company": "Hello",
+      "experience": 2,
+      "salary": 2000
+    },
+    {
+      "id": "4",
+      "firstName": "Dasdd",
+      "lastName": "Aetwetw",
+      "email": "hello@123.com",
+      "dob": "1999-06-06T00:00:00.000Z",
+      "gender": "Female",
+      "education": "Diploma",
+      "company": "Asd",
+      "experience": 6,
+      "salary": 6500
+    },
+    {
+      "id": "5",
+      "firstName": "Helloo",
+      "lastName": "Heyo",
+      "email": "asdsad@gmail.com",
+      "dob": "2006-06-06T00:00:00.000Z",
+      "gender": "Female",
+      "education": "Intermediate",
+      "company": "Adasdaer",
+      "experience": 5,
+      "salary": 9999
+    },
+    {
+      "id": "6",
+      "firstName": "Asdsaad",
+      "lastName": "Asfsafafa",
+      "email": "asfasff@gmail.com",
+      "dob": "2000-01-04T00:00:00.000Z",
+      "gender": "Female",
+      "education": "PostGraduate",
+      "company": "Adasf",
+      "experience": 6,
+      "salary": 20000
+    }
+  ]
+}
